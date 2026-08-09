@@ -1,0 +1,99 @@
+<!-- Topbar Start -->
+<div class="w-full glass-dark py-1 hidden lg:block border-0 px-12 text-sm">
+    <div class="flex flex-wrap items-center justify-between">
+        <div class="w-7/12 text-left flex items-center">
+            <div class="h-full inline-flex items-center mr-6">
+                <img class="h-5" src="../../assets/image/icon/phone.png" alt="">
+                <a href="tel:+918104988600"
+                    class="ml-2 text-white no-underline hover:text-premium-primary-hover transition-colors text-sm">+91
+                    8104988600</a>
+                <span class="text-white mx-1 text-sm">/</span>
+                <a href="tel:+918104988602"
+                    class="text-white no-underline hover:text-premium-primary-hover transition-colors text-sm">8104988602</a>
+            </div>
+            <div class="h-full inline-flex items-center mr-6">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=customercare@lordsmark.com" target="_blank" rel="noopener noreferrer"
+                    class="text-white no-underline hover:text-premium-primary-hover transition-colors flex items-center">
+                    <img class="h-5" src="../../assets/image/icon/email.png" alt="">
+                    <span class="ml-2">customercare&#64;lordsmark.com</span>
+                </a>
+            </div>
+        </div>
+        <div class="w-5/12 text-right flex items-center justify-end">
+            <div class="h-full inline-flex items-center">
+                <a class="text-white/50 hover:text-white ml-6 transition-colors" href="https://www.facebook.com/lordsmarkinsurance/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f text-lg"></i></a>
+                <a class="text-white/50 hover:text-white ml-6 transition-colors" href="https://www.youtube.com/@lordsmarkindustries" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube text-lg"></i></a>
+                <a class="text-white/50 hover:text-white ml-6 transition-colors" href="https://www.linkedin.com/company/lords-mark-insurance-broking-services/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in text-lg"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Topbar End -->
+
+<!-- Navbar Start -->
+<nav
+    class="w-full glass shadow-premium-sm sticky top-0 z-50 px-6 lg:px-12 py-0 flex flex-wrap items-center justify-between transition-all duration-500">
+    <a routerLink="/" class="flex items-center no-underline">
+        <h1 class="m-0 text-lg lg:text-lg font-bold text-gradient flex items-center">
+            <img class="max-h-6 lg:max-h-6 mr-2" src="../../assets/image/Insurance Png.png" alt="">Bimaakawach
+        </h1>
+    </a>
+
+    <button type="button" class="lg:hidden p-1 border-0 focus:outline-none" (click)="toggleMenu()">
+        <svg class="w-6 h-6 text-premium-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+
+    <div [ngClass]="{'hidden': !isMenuOpen, 'block': isMenuOpen}"
+        class="lg:flex lg:items-center w-full lg:w-auto lg:flex-1 border-t border-gray-100 lg:border-t-0"
+        id="navbarCollapse">
+        <div class="flex flex-col lg:flex-row lg:ml-auto font-medium lg:items-center w-full lg:w-auto">
+            <a routerLink="/"
+                class="block text-gray-700 hover:text-premium-primary hover:bg-gray-50 lg:hover:bg-transparent border-b border-gray-100 lg:border-b-0 no-underline px-6 lg:px-3 py-2 lg:py-1 lg:ml-6 transition-colors text-base lg:text-sm">Home</a>
+            <a routerLink="/about"
+                class="block text-gray-700 hover:text-premium-primary hover:bg-gray-50 lg:hover:bg-transparent border-b border-gray-100 lg:border-b-0 no-underline px-6 lg:px-3 py-2 lg:py-1 lg:ml-6 transition-colors text-base lg:text-sm">About
+                Us</a>
+            <a routerLink="/services"
+                class="block text-gray-700 hover:text-premium-primary hover:bg-gray-50 lg:hover:bg-transparent border-b border-gray-100 lg:border-b-0 no-underline px-6 lg:px-3 py-2 lg:py-1 lg:ml-6 transition-colors text-base lg:text-sm">Our
+                Services</a>
+
+            <div class="relative group border-b border-gray-100 lg:border-b-0">
+                <a href="#" (click)="togglePagesMenu($event)"
+                    class="block text-gray-700 hover:text-premium-primary hover:bg-gray-50 lg:hover:bg-transparent no-underline px-6 lg:px-3 py-2 lg:py-1 lg:ml-6 flex items-center justify-between lg:justify-start transition-colors text-base lg:text-sm">
+                    Pages
+                    <svg class="w-4 h-4 lg:w-3 lg:h-3 ml-1 transition-transform duration-300"
+                        [ngClass]="{'rotate-180': isPagesMenuOpen}" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </a>
+                <div [ngClass]="{'hidden lg:flex': !isPagesMenuOpen, 'flex': isPagesMenuOpen}"
+                    class="lg:absolute left-0 lg:w-48 bg-gray-50 lg:bg-white/90 lg:backdrop-blur-md lg:rounded-xl lg:shadow-premium-lg lg:border lg:border-gray-100 lg:opacity-0 lg:invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-300 z-50 flex flex-col mt-2 lg:mt-0">
+                    <a routerLink="/feature"
+                        class="block px-8 lg:px-4 py-2 lg:py-2 text-gray-600 hover:bg-gray-100 lg:hover:bg-premium-light hover:text-premium-primary no-underline lg:rounded-t-xl transition-colors">Features</a>
+                    <a routerLink="/appointment"
+                        class="block px-8 lg:px-4 py-2 lg:py-2 text-gray-600 hover:bg-gray-100 lg:hover:bg-premium-light hover:text-premium-primary no-underline transition-colors">Appointment</a>
+                    <a routerLink="/team"
+                        class="block px-8 lg:px-4 py-2 lg:py-2 text-gray-600 hover:bg-gray-100 lg:hover:bg-premium-light hover:text-premium-primary no-underline transition-colors">Team
+                        Members</a>
+                    <a routerLink="/testimonial"
+                        class="block px-8 lg:px-4 py-2 lg:py-2 text-gray-600 hover:bg-gray-100 lg:hover:bg-premium-light hover:text-premium-primary no-underline transition-colors">Testimonial</a>
+                    <a routerLink="/404"
+                        class="block px-8 lg:px-4 py-2 lg:py-2 text-gray-600 hover:bg-gray-100 lg:hover:bg-premium-light hover:text-premium-primary no-underline lg:rounded-b-xl transition-colors">404
+                        Page</a>
+                </div>
+            </div>
+
+            <a routerLink="/contact"
+                class="block text-gray-700 hover:text-premium-primary hover:bg-gray-50 lg:hover:bg-transparent border-b border-gray-100 lg:border-b-0 no-underline px-6 lg:px-3 py-3 lg:py-1 lg:ml-6 transition-colors text-base lg:text-sm">Contact
+                Us</a>
+            <a class="block text-gray-700 hover:text-premium-primary hover:bg-gray-50 lg:hover:bg-transparent border-b border-gray-100 lg:border-b-0 no-underline px-6 lg:px-3 py-3 lg:py-1 lg:ml-6 cursor-pointer transition-colors text-base lg:text-sm"
+                (click)="redirectToLogin()" routerLinkActive="text-premium-primary">Login</a>
+        </div>
+    </div>
+
+    <a routerLink="/quote" class="btn-premium hidden lg:block shrink-0 ml-6 no-underline text-white"
+        style="padding: 4px 12px; font-size: 0.75rem;">Get A Quote</a>
+</nav>
+<!-- Navbar End -->
